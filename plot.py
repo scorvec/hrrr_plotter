@@ -60,7 +60,7 @@ def load_shapefile(filepath):
 ###Grab latest HRRR data using Herbie
 def grabdata(cycle, fxx):
     return Herbie(cycle, searchString=":REFD:1000 m:|:RETOP:cloud top:|:HGT:cloud ceiling:|:UGRD:10m_above_ground:|:VGRD:10m_above_ground:",
-                  save_dir='/root/hrrr_grib', model="hrrr", product="sfc", freq="1H", member=1, fxx=fxx, verbose=True, overwrite=False)
+                  save_dir='hrrr_grib', model="hrrr", product="sfc", freq="1H", member=1, fxx=fxx, verbose=True, overwrite=False)
 
 ###Fetch and load the data into xarray
 def fetch_and_prepare_data(adjusted_formatted_time, fxx, max_retries=50, retry_delay=60):
